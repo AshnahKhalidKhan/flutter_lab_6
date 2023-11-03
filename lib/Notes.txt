@@ -1,0 +1,18 @@
+- We use firebase because it does a lot of API integration automatically, else in other databases we will have to make separate APIs for login, authentications etc separately
+
+- Firestore is used because...?
+
+- flutter pub add firebase_core
+flutter pub add firebase_auth
+flutter pub add cloud_firestore
+flutter pub add provider
+flutter pub add firebase_ui_auth // Do not install this one yet
+
+- import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:provider/provider.dart';
+
+
+dart pub global activate flutterfire_cli
+flutterfire configure
