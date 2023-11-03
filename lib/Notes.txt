@@ -13,6 +13,8 @@ firebase login
 firebase projects:list
 dart pub global activate flutterfire_cli
 
+- env -> Envirpnmental Variables -> Path -> New -> <Jo bhi path diya hua hai> -> Add -> OK -> OK
+
 
 
 - import 'package:firebase_core/firebase_core.dart';
