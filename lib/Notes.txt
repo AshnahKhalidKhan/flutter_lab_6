@@ -15,7 +15,10 @@ dart pub global activate flutterfire_cli
 
 - env -> Envirpnmental Variables -> Path -> New -> <Jo bhi path diya hua hai> -> Add -> OK -> OK
 
+- Close terminal, then reopen it
 
+- flutterfire configure
+Select project -> android
 
 - import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -23,5 +26,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:provider/provider.dart';
 
 
-dart pub global activate flutterfire_cli
-flutterfire configure
+
+Okay, what do we have to do, Ash:
+- QWorld Quix (Nov 13)
+- HCI (Nov 30)
+- App Dev (Themes/Sign In/Authentication)
+- SI (Assignment aaanay wala hai for sure)
+- Is there anything else? Stormfiber paid
+- DBMS checking I need to do this...
+- LinkedIn
+- LeetCode 150 (I CAN do this)
+- FYP madness... Milestones 2 and 3

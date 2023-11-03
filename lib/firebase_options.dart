@@ -14,12 +14,16 @@ import 'package:flutter/foundation.dart'
 ///   options: DefaultFirebaseOptions.currentPlatform,
 /// );
 /// ```
-class DefaultFirebaseOptions {
-  static FirebaseOptions get currentPlatform {
-    if (kIsWeb) {
+class DefaultFirebaseOptions 
+{
+  static FirebaseOptions get currentPlatform 
+  {
+    if (kIsWeb) 
+    {
       return web;
     }
-    switch (defaultTargetPlatform) {
+    switch (defaultTargetPlatform) 
+    {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
@@ -27,23 +31,27 @@ class DefaultFirebaseOptions {
       case TargetPlatform.macOS:
         return macos;
       case TargetPlatform.windows:
-        throw UnsupportedError(
+        throw UnsupportedError
+        (
           'DefaultFirebaseOptions have not been configured for windows - '
           'you can reconfigure this by running the FlutterFire CLI again.',
         );
       case TargetPlatform.linux:
-        throw UnsupportedError(
+        throw UnsupportedError
+        (
           'DefaultFirebaseOptions have not been configured for linux - '
           'you can reconfigure this by running the FlutterFire CLI again.',
         );
       default:
-        throw UnsupportedError(
+        throw UnsupportedError
+        (
           'DefaultFirebaseOptions are not supported for this platform.',
         );
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
+  static const FirebaseOptions web = FirebaseOptions
+  (
     apiKey: 'AIzaSyD1t_Qk_h0371rHWe3VClAdYXV3L3KFLrs',
     appId: '1:844034924495:web:a4c1ba0c2a3e6a7de0fcba',
     messagingSenderId: '844034924495',
@@ -53,7 +61,8 @@ class DefaultFirebaseOptions {
     measurementId: 'G-G8PFN9RRFP',
   );
 
-  static const FirebaseOptions android = FirebaseOptions(
+  static const FirebaseOptions android = FirebaseOptions
+  (
     apiKey: 'AIzaSyAjFncHMSfSRjrhGPVy6uy0Joc1k4ImsIw',
     appId: '1:844034924495:android:93d36a6bcdf126f0e0fcba',
     messagingSenderId: '844034924495',
@@ -61,7 +70,8 @@ class DefaultFirebaseOptions {
     storageBucket: 'flutter-lab-6.appspot.com',
   );
 
-  static const FirebaseOptions ios = FirebaseOptions(
+  static const FirebaseOptions ios = FirebaseOptions
+  (
     apiKey: 'AIzaSyC9C1qtFdjn-aCasHrTACaEjYjrdJAn4PA',
     appId: '1:844034924495:ios:8c4951cbbc3d20fce0fcba',
     messagingSenderId: '844034924495',
@@ -70,7 +80,8 @@ class DefaultFirebaseOptions {
     iosBundleId: 'com.example.flutterLab6',
   );
 
-  static const FirebaseOptions macos = FirebaseOptions(
+  static const FirebaseOptions macos = FirebaseOptions
+  (
     apiKey: 'AIzaSyC9C1qtFdjn-aCasHrTACaEjYjrdJAn4PA',
     appId: '1:844034924495:ios:cc4943ffb9b09cbce0fcba',
     messagingSenderId: '844034924495',
