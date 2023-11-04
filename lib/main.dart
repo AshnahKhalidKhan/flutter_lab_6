@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_lab_6/RegistrationPage.dart';
 
 void main() 
 {
@@ -14,13 +15,7 @@ class MainApp extends StatelessWidget
   {
     return const MaterialApp
     (
-      home: Scaffold
-      (
-        body: Center
-        (
-          child: Text('Hello World!'),
-        ),
-      ),
+      home: RegistrationPage(),
     );
   }
 }
