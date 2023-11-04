@@ -1,10 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_lab_6/Authentication.dart';
+import 'package:flutter_lab_6/FirebaseUser.dart';
 import 'package:flutter_lab_6/RegistrationPage.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:provider/provider.dart';
 
-void main() 
+void main() async
 {
-  runApp(const MainApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MainApp());
 }
+
+// void main() 
+// {
+//   runApp(const MainApp());
+// }
 
 class MainApp extends StatelessWidget 
 {
@@ -13,9 +24,16 @@ class MainApp extends StatelessWidget
   @override
   Widget build(BuildContext context) 
   {
-    return const MaterialApp
+    return StreamProvider<FirebaseUser?>.value
     (
-      home: RegistrationPage(),
+      value: AuthService().user,
+      initialData: null,
+      child: MaterialApp
+      (
+        home: RegistrationPage(),
+      )
     );
   }
 }
+
+

@@ -6,7 +6,54 @@ class AuthService
 {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  Future signInEmailPassword(LoginUser user) async 
+  FirebaseUser? _firebaseUser(User? user) 
+  {
+    return user != null ? FirebaseUser(uid: user.uid) : null;
+  }
+
+  Stream<FirebaseUser?> get user 
+  {
+    return _auth.authStateChanges().map(_firebaseUser);
+  }
+
+  Future register(LoginUser user) async 
+  {
+    try
+    {
+      UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword
+      (
+        email: user.email.toString(),
+        password: user.password.toString()
+      );
+      User? user1 = userCredential.user;
+      if (user1 != null)
+      {
+        return FirebaseUser(uid: user1.uid);
+      }
+      else
+      {
+        return null;
+      }
+    }
+    on FirebaseAuthException catch (e) 
+    {
+      return FirebaseUser
+      (
+        code: e.code, 
+        uid: null
+      );
+    }
+    catch (e) 
+    {
+      return FirebaseUser
+      (
+        code: e.toString(), 
+        uid: null
+      );
+    }
+  }
+
+  Future login(LoginUser user) async 
   {
     try
     {
@@ -16,8 +63,16 @@ class AuthService
         password: user.password.toString()
       );
       User? user1 = userCredential.user;
-      return _firebaseUser(user1);
-    } on FirebaseAuthException catch (e) 
+      if (user1 != null)
+      {
+        return FirebaseUser(uid: user1.uid);
+      }
+      else
+      {
+        return null;
+      }
+    }
+    on FirebaseAuthException catch (e) 
     {
       return FirebaseUser
       (
@@ -25,10 +80,5 @@ class AuthService
         uid: null
       );
     }
-  }
-
-  FirebaseUser? _firebaseUser(User? user) 
-  {
-    return user != null ? FirebaseUser(uid: user.uid) : null;
   }
 }
