@@ -17,6 +17,15 @@ class _RegistrationPageState extends State<RegistrationPage>
   final _password = TextEditingController();
 
   @override
+  void dispose() 
+  {
+    // Clean up the controller when the widget is disposed.
+    _email.dispose();
+    _password.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) 
   {
     return Scaffold

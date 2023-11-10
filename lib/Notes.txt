@@ -37,3 +37,9 @@ Okay, what do we have to do, Ash:
 - LinkedIn
 - LeetCode 150 (I CAN do this)
 - FYP madness... Milestones 2 and 3
+
+Firebase Social Login
+Then Refactor Whole Code and put it into Provider
+
+
+https://petercoding.com/firebase/2021/05/24/using-google-sign-in-with-firebase-in-flutter/
