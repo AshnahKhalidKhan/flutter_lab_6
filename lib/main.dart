@@ -37,8 +37,8 @@ class MainApp extends StatelessWidget
       child: MaterialApp
       (
         // home: RegistrationPage(),
-        // home: GoogleSignInPage(),
-        home: FacebookSignInPage()
+        home: GoogleSignInPage(),
+        // home: FacebookSignInPage()
       )
     );
   }
