@@ -51,3 +51,4 @@ State Management:
 - state (condition) and event (action)
 - click, tap, swipe
 - hover event does not work on phone; it works on web
+- River and flutter_riverpod used for state management
