@@ -17,38 +17,41 @@ class _APIPageStateState extends State<APIPageState>
   {
     return Scaffold
     (
-      body: Consumer(builder: (context, ref, child) 
-      {
-        final notifer = ref.watch(userStateNotifierProvider.notifier);
-        return notifer.state.maybeWhen
-        (
-          loading : () => const Center
+      body: Consumer
+      (
+        builder: (context, ref, child) 
+        {
+          final notifer = ref.watch(userStateNotifierProvider.notifier);
+          return notifer.state.maybeWhen
           (
-            child: CircularProgressIndicator(),
-          ),
-          success: (user) => Center
-          (
-            child: Text("${user.email}"),
-          ),
-          error: (e) => Center
-          (
-            child: Text("Error occurred, $e"),
-          ),
-          initial: () => Text('initial'),
-          orElse: () => const Center
-          (
-            // child: FlatButton
-            // (
-              // color: Colors.blue,
-              // child Text
+            loading : () => const Center
+            (
+              child: CircularProgressIndicator(),
+            ),
+            success: (user) => Center
+            (
+              child: Text("${user.email}"),
+            ),
+            error: (e) => Center
+            (
+              child: Text("Error occurred, $e"),
+            ),
+            initial: () => Text('initial'),
+            orElse: () => const Center
+            (
+              // child: FlatButton
               // (
-                // "Get Singler User",
-                // style: TextStyle(color: Colors.white),
+                // color: Colors.blue,
+                // child Text
+                // (
+                  // "Get Singler User",
+                  // style: TextStyle(color: Colors.white),
+                // ),
+                // onPressed: () {}
               // ),
-              // onPressed: () {}
-            // ),
-          ));
-      }),
+            ));
+        }
+      ),
     );
   }
 }
