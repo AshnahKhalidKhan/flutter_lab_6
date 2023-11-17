@@ -53,3 +53,16 @@ State Management:
 - hover event does not work on phone; it works on web
 - River and flutter_riverpod used for state management
 - Factory is a design pattern method; use it when same functions need to be defined different ways.
+- States for hitting API: success, network error, loading
+
+
+Good code in flutter:
+- Two parts: API and UI, and there should be layer in between
+- Business logic NOT on UI
+- Server/API (type SOAP, Json) ----> Network Layer (has JSON data) ----> Middle Layer/Notifier/BLOC (structures data for UI; has data in Dart) ----> UI (Channel like mobile, desktop etc)
+- If middle layer was not there, you would have to make UI each time again when data changes
+- Best practice: make separate model for Netwrok and Middle layers so you only need to make changes in one
+- Middle Layer can be anything: MVC, MVVM, BLOC, Riverpod
+- Dependency injections: when app runs, it gets to know where data is coming from.
+- UI tells Notifier it is on some state (loading, initial, succes, error) and then it renders that state on UI.
+- Notifier is global so it can notify for whatever state it wants.
