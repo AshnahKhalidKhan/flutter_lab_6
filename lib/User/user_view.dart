@@ -4,21 +4,7 @@ class UserModelWidget extends StatefulWidget
 {
   UserModelWidget({super.key});
 
-
-  final _email = TextEditingController();
-  final _password = TextEditingController();
-
-  @override
-  void dispose() 
-  {
-    // Clean up the controller when the widget is disposed.
-    _email.dispose();
-    _password.dispose();
-    // super.dispose();
-  }
-
-
-  @override
+   @override
   State<UserModelWidget> createState() => _UserModelWidgetState();
 }
 
@@ -48,7 +34,7 @@ class _UserModelWidgetState extends State<UserModelWidget>
           crossAxisAlignment: CrossAxisAlignment.center,
           children: 
           [
-            const Text('Registration Page Flutter Lab 7', style: TextStyle(fontSize: 30.0),),
+            const Text('Registration Page Flutter Lab 8', style: TextStyle(fontSize: 30.0),),
             ElevatedButton.icon
             (
               onPressed: () {},

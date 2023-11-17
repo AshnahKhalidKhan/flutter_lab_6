@@ -2,13 +2,10 @@
 
 //dependent sources
 import 'package:flutter_lab_6/Core/Network/API.dart';
-import 'package:flutter_lab_6/User/APIPageState.dart';
-import 'package:flutter_lab_6/User/Providers.dart';
 import 'package:flutter_lab_6/User/States/States.dart';
 import 'package:http/http.dart' as http;
 import 'package:riverpod/riverpod.dart';
-
-// final clientProvider = Provider<ApiClient>((_) => ApiClient(http.Client()));
+ final clientProvider = Provider<ApiClient>((_) => ApiClient(http.Client()));
 
 final userStateNotifierProvider = StateNotifierProvider
 (
@@ -18,7 +15,7 @@ final userStateNotifierProvider = StateNotifierProvider
 class UserStateNotifier extends StateNotifier<UserState> 
 {
   final ApiClient apiClient;
-  UserStateNotifier(this.apiClient) : super(UserState.initial());
+  UserStateNotifier(this.apiClient) : super(const UserState.initial());
 
   getUser() async
   {

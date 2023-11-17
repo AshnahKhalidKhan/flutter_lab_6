@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_lab_6/Core/Model/user_model.dart';
+import 'package:flutter_lab_6/User/APIPageState.dart';
 import 'package:flutter_lab_6/User/user_view.dart';
 // import 'package:flutter_lab_6/Authentication.dart';
 // import 'package:flutter_lab_6/FacebookSignInPage.dart';
@@ -60,7 +61,8 @@ class MainApp extends StatelessWidget
   {
     return MaterialApp
     (
-      home: UserModelWidget()
+      // home: UserModelWidget()
+      home: APIPageState()
     );
   }
 }

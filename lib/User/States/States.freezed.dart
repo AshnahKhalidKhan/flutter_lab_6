@@ -21,7 +21,7 @@ mixin _$UserState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(User user) success,
-    required TResult Function(String s, String message) error,
+    required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -29,7 +29,7 @@ mixin _$UserState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(User user)? success,
-    TResult? Function(String s, String message)? error,
+    TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,7 +37,7 @@ mixin _$UserState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(User user)? success,
-    TResult Function(String s, String message)? error,
+    TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -126,7 +126,7 @@ class _$UserInitialImpl implements _UserInitial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(User user) success,
-    required TResult Function(String s, String message) error,
+    required TResult Function(String message) error,
   }) {
     return initial();
   }
@@ -137,7 +137,7 @@ class _$UserInitialImpl implements _UserInitial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(User user)? success,
-    TResult? Function(String s, String message)? error,
+    TResult? Function(String message)? error,
   }) {
     return initial?.call();
   }
@@ -148,7 +148,7 @@ class _$UserInitialImpl implements _UserInitial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(User user)? success,
-    TResult Function(String s, String message)? error,
+    TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -240,7 +240,7 @@ class _$UserLoadingImpl implements _UserLoading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(User user) success,
-    required TResult Function(String s, String message) error,
+    required TResult Function(String message) error,
   }) {
     return loading();
   }
@@ -251,7 +251,7 @@ class _$UserLoadingImpl implements _UserLoading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(User user)? success,
-    TResult? Function(String s, String message)? error,
+    TResult? Function(String message)? error,
   }) {
     return loading?.call();
   }
@@ -262,7 +262,7 @@ class _$UserLoadingImpl implements _UserLoading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(User user)? success,
-    TResult Function(String s, String message)? error,
+    TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -381,7 +381,7 @@ class _$UserLoadedSuccessImpl implements _UserLoadedSuccess {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(User user) success,
-    required TResult Function(String s, String message) error,
+    required TResult Function(String message) error,
   }) {
     return success(user);
   }
@@ -392,7 +392,7 @@ class _$UserLoadedSuccessImpl implements _UserLoadedSuccess {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(User user)? success,
-    TResult? Function(String s, String message)? error,
+    TResult? Function(String message)? error,
   }) {
     return success?.call(user);
   }
@@ -403,7 +403,7 @@ class _$UserLoadedSuccessImpl implements _UserLoadedSuccess {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(User user)? success,
-    TResult Function(String s, String message)? error,
+    TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -465,7 +465,7 @@ abstract class _$$UserLoadedErrorImplCopyWith<$Res> {
           $Res Function(_$UserLoadedErrorImpl) then) =
       __$$UserLoadedErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String s, String message});
+  $Res call({String message});
 }
 
 /// @nodoc
@@ -479,15 +479,10 @@ class __$$UserLoadedErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? s = null,
     Object? message = null,
   }) {
     return _then(_$UserLoadedErrorImpl(
-      null == s
-          ? _value.s
-          : s // ignore: cast_nullable_to_non_nullable
-              as String,
-      message: null == message
+      null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
@@ -498,17 +493,14 @@ class __$$UserLoadedErrorImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$UserLoadedErrorImpl implements _UserLoadedError {
-  _$UserLoadedErrorImpl(this.s, {this.message = 'Default error message'});
+  const _$UserLoadedErrorImpl(this.message);
 
   @override
-  final String s;
-  @override
-  @JsonKey()
   final String message;
 
   @override
   String toString() {
-    return 'UserState.error(s: $s, message: $message)';
+    return 'UserState.error(message: $message)';
   }
 
   @override
@@ -516,12 +508,11 @@ class _$UserLoadedErrorImpl implements _UserLoadedError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserLoadedErrorImpl &&
-            (identical(other.s, s) || other.s == s) &&
             (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, s, message);
+  int get hashCode => Object.hash(runtimeType, message);
 
   @JsonKey(ignore: true)
   @override
@@ -536,9 +527,9 @@ class _$UserLoadedErrorImpl implements _UserLoadedError {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(User user) success,
-    required TResult Function(String s, String message) error,
+    required TResult Function(String message) error,
   }) {
-    return error(s, message);
+    return error(message);
   }
 
   @override
@@ -547,9 +538,9 @@ class _$UserLoadedErrorImpl implements _UserLoadedError {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(User user)? success,
-    TResult? Function(String s, String message)? error,
+    TResult? Function(String message)? error,
   }) {
-    return error?.call(s, message);
+    return error?.call(message);
   }
 
   @override
@@ -558,11 +549,11 @@ class _$UserLoadedErrorImpl implements _UserLoadedError {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(User user)? success,
-    TResult Function(String s, String message)? error,
+    TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error(s, message);
+      return error(message);
     }
     return orElse();
   }
@@ -606,10 +597,8 @@ class _$UserLoadedErrorImpl implements _UserLoadedError {
 }
 
 abstract class _UserLoadedError implements UserState {
-  factory _UserLoadedError(final String s, {final String message}) =
-      _$UserLoadedErrorImpl;
+  const factory _UserLoadedError(final String message) = _$UserLoadedErrorImpl;
 
-  String get s;
   String get message;
   @JsonKey(ignore: true)
   _$$UserLoadedErrorImplCopyWith<_$UserLoadedErrorImpl> get copyWith =>
