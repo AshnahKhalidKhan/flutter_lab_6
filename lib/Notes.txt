@@ -52,3 +52,4 @@ State Management:
 - click, tap, swipe
 - hover event does not work on phone; it works on web
 - River and flutter_riverpod used for state management
+- Factory is a design pattern method; use it when same functions need to be defined different ways.
