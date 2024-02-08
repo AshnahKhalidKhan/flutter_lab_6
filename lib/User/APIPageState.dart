@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_lab_6/User/stateNotifier.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:provider/provider.dart' as p;
 
 class APIPageState extends StatefulWidget
 {
@@ -22,6 +23,7 @@ class _APIPageStateState extends State<APIPageState>
         builder: (context, ref, child) 
         {
           final notifer = ref.watch(userStateNotifierProvider.notifier);
+          // final state = watch(userStateNotifierProvider.state);
           return notifer.state.maybeWhen
           (
             loading : () => const Center
@@ -36,19 +38,21 @@ class _APIPageStateState extends State<APIPageState>
             (
               child: Text("Error occurred, $e"),
             ),
-            initial: () => Text('initial'),
-            orElse: () => const Center
+            // initial: () => const Center( child: Text('initial')),
+            orElse: () => Center
             (
-              // child: FlatButton
-              // (
-                // color: Colors.blue,
-                // child Text
-                // (
-                  // "Get Singler User",
-                  // style: TextStyle(color: Colors.white),
-                // ),
-                // onPressed: () {}
-              // ),
+              child: ElevatedButton
+              (
+                child: const Text
+                (
+                  "Get Singler User",
+                  style: TextStyle(color: Colors.white),
+                ),
+                onPressed: () 
+                {
+                  // userStateNotifierProvider.getUser();
+                },
+              ),
             ));
         }
       ),

@@ -25,7 +25,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:provider/provider.dart';
 
-
+- Firebase.initialize() method is a Future so we use async and await keywords in main.dart's void main() function so firebase is initialized before app runs and app doesn't crash.
 
 Okay, what do we have to do, Ash:
 - QWorld Quix (Nov 13)

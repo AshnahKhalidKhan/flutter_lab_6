@@ -5,7 +5,8 @@ import 'package:flutter_lab_6/Core/Network/API.dart';
 import 'package:flutter_lab_6/User/States/States.dart';
 import 'package:http/http.dart' as http;
 import 'package:riverpod/riverpod.dart';
- final clientProvider = Provider<ApiClient>((_) => ApiClient(http.Client()));
+
+final clientProvider = Provider<ApiClient>((_) => ApiClient(http.Client()));
 
 final userStateNotifierProvider = StateNotifierProvider
 (
